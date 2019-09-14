@@ -24,7 +24,7 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum 'Gemfile.lock' }}
+            - v1-dependencies-{{ checksum "Gemfile.lock" }}
             # Fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
@@ -38,7 +38,7 @@ jobs:
       - save_cache:
           paths:
             - ./vendor/bundle
-          key: v1-dependencies-{{ checksum 'Gemfile.lock' }}
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
       # Database setup
       - run: bundle exec rake db:{drop,create,migrate}
@@ -56,7 +56,7 @@ jobs:
     working_directory: ~/koroibos
 
     environment:
-      HEROKU_APP: 'staging-koroibos-final'
+      HEROKU_APP: "staging-koroibos-final"
 
     steps:
       - checkout
@@ -64,7 +64,7 @@ jobs:
       - run:
           name: Deploy Master to Heroku staging
           command: |
-            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/staging-koroibos.git master
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/staging-koroibos-final.git master
 
       - run: heroku run rails db:migrate
 
