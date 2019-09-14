@@ -3,4 +3,6 @@ class OlympianEvent < ApplicationRecord
 
   belongs_to :event
   belongs_to :olympian
+
+  enum medal: [ 'NA', 'Bronze', 'Silver', 'Gold' ]
 end

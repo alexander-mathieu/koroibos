@@ -4,7 +4,7 @@ class CreateOlympianEvents < ActiveRecord::Migration[5.2]
       t.string :name
       t.references :event, foreign_key: true
       t.references :olympian, foreign_key: true
-      t.string :medal
+      t.integer :medal
 
       t.timestamps
     end
