@@ -24,7 +24,12 @@ $ bundle install
 The database is setup using Postgres. In order to complete the setup:
 
 * Install [Postgres](https://www.postgresql.org/download/)
-* Run the command `$ rails db:{create,migrate,seed}`
+* Run the command `$ rails db:{create,migrate}`
+
+Once initial setup is complete, run the following command to populate the database:
+```
+$ bundle exec rake import_olympic_data
+```
 
 ### Testing
 
