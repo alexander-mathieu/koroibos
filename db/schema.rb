@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 2019_09_14_211604) do
   end
 
   create_table "olympian_events", force: :cascade do |t|
-    t.string "name"
     t.bigint "event_id"
     t.bigint "olympian_id"
     t.integer "medal"
