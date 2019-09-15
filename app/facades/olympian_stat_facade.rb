@@ -11,7 +11,6 @@ class OlympianStatFacade
 
   def average_height
     {
-      unit: 'cm',
       female_olympians: Olympian.olympian_average('height', 'F'),
       male_olympians: Olympian.olympian_average('height', 'M')
     }
@@ -19,7 +18,6 @@ class OlympianStatFacade
 
   def average_weight
     {
-      unit: 'kg',
       female_olympians: Olympian.olympian_average('weight', 'F'),
       male_olympians: Olympian.olympian_average('weight', 'M')
     }
