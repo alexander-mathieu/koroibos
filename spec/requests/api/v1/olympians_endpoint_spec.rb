@@ -47,4 +47,14 @@ RSpec.describe 'Olympians endpoint' do
 
     expect(olympian[:age]).to eq(14)
   end
+
+  it 'returns the oldest Olympian' do
+    get '/api/v1/olympians?age=oldest'
+
+    expect(response).to be_successful
+
+    olympian = JSON.parse(response.body, symbolize_names: true)[:data][:attributes]
+
+    expect(olympian[:age]).to eq(42)
+  end
 end
