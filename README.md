@@ -138,6 +138,47 @@ Example of expected output:
 }
 ```
 
+### `GET /api/v1/medalists`
+
+Returns a list of all medalists, broken down by event.
+
+Example of expected response:
+```
+{
+  "data": {
+    "id": null,
+    "type": "events",
+    "attributes": {
+      "event_medalists": [
+        {
+          "event": "Rowing Men's Coxless Pairs",
+          "medalists": [
+            {
+              "name": "Giovanni Abagnale",
+              "team": "Italy",
+              "age": 21,
+              "medal": "Bronze"
+            },
+            {
+              "name": "Hamish Byron Bond",
+              "team": "New Zealand",
+              "age": 30,
+              "medal": "Gold"
+            },
+            {
+              "name": "Lawrence Brittain",
+              "team": "South Africa",
+              "age": 25,
+              "medal": "Silver"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
 ## Local Installation
 
 ### Requirements

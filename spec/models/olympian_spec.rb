@@ -11,12 +11,17 @@ RSpec.describe Olympian, type: :model do
     @o7 = create(:olympian, sex: 'M', age: 30, height: 200, weight: 85)
     @o8 = create(:olympian, sex: 'M', age: 42, height: 205, weight: 100)
 
-    create_list(:olympian_event_with_medal, 4, olympian: @o2)
-    create_list(:olympian_event_with_medal, 2, olympian: @o4)
-    create_list(:olympian_event_with_medal, 1, olympian: @o1)
-    create_list(:olympian_event_without_medal, 2, olympian: @o4)
-    create_list(:olympian_event_without_medal, 1, olympian: @o2)
-    create_list(:olympian_event_without_medal, 0, olympian: @o3)
+    @e1 = create(:event, name: 'Event 1')
+    @e2 = create(:event, name: 'Event 2')
+    @e3 = create(:event, name: 'Event 3')
+    @e4 = create(:event, name: 'Event 4')
+
+    create_list(:olympian_event_with_medal, 4, event: @e1, olympian: @o2)
+    create_list(:olympian_event_with_medal, 2, event: @e1, olympian: @o4)
+    create_list(:olympian_event_with_medal, 1, event: @e2, olympian: @o1)
+    create_list(:olympian_event_without_medal, 2, event: @e2, olympian: @o4)
+    create_list(:olympian_event_without_medal, 1, event: @e3, olympian: @o2)
+    create_list(:olympian_event_without_medal, 0, event: @e4, olympian: @o3)
   end
 
   describe 'validations' do
@@ -62,6 +67,11 @@ RSpec.describe Olympian, type: :model do
       expect(Olympian.olympian_average('weight', 'M')).to eq(85)
 
       expect(Olympian.olympian_average('age', [ 'F', 'M' ])).to eq(27)
+    end
+
+    it '.medalists_by_event' do
+      expect(Olympian.event_medalists(@e1.id)).to eq([@o2, @o2, @o2, @o2, @o4, @o4])
+      expect(Olympian.event_medalists(@e2.id)).to eq([@o1])
     end
   end
 end
