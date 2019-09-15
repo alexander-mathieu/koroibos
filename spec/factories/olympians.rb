@@ -1,7 +1,7 @@
 FactoryBot.define do
-  factory :olympian do
-    sexes = ["M", "F"]
+  sexes = [ "M", "F" ]
 
+  factory :olympian do
     team
     name { Faker::Name.unique.name }
     sex { sexes.sample }

@@ -6,6 +6,7 @@ ruby '2.4.1'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'factory_bot_rails'
 gem 'faker'
+gem 'fast_jsonapi'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.3'

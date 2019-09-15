@@ -1,12 +1,20 @@
 FactoryBot.define do
-  factory :sport do
-    sports = [
-      'Weightlifting', 'Gymnastics',
-      'Athletics',     'Rowing',
-      'Taekwondo',     'Boxing',
-      'Equestrianism', 'Cycling'
-    ]
+  sports = [
+    'Weightlifting', 'Gymnastics',
+    'Athletics',     'Rowing',
+    'Taekwondo',     'Boxing',
+    'Equestrianism', 'Cycling',
+    'Badminton',     'Rugby Sevens',
+    'Table Tennis',  'Water Polo',
+    'Trampolining',  'Basketball',
+    'Triathlon',     'Modern Pentathlon',
+    'Sailing',       'Beach Volleyball',
+    'Golf',          'Rhythmic Gymnastics',
+    'Hockey',        'Gymnastics',
+    'Archery',       'Tennis'
+  ]
 
-    name { sports.sample }
+  factory :sport do
+    name { sports.pop }
   end
 end
