@@ -9,7 +9,19 @@ class Olympian < ApplicationRecord
 
   enum sex: [ 'M', 'F' ]
 
+  default_scope { order(:id) }
+
   def total_medal_count
-    olympian_events.where.not(medal: 0).count
+    olympian_events
+    .where.not(medal: 0)
+    .count
+  end
+
+  def self.youngest_olympian
+    find_by(age: minimum(:age))
+  end
+
+  def self.oldest_olympian
+    find_by(age: maximum(:age))
   end
 end
