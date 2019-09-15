@@ -102,6 +102,42 @@ Example of expected response:
 }
 ```
 
+### `GET /api/v1/events`
+
+Returns a list of all events, broken down by sport.
+
+Example of expected output:
+```
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "sport",
+      "attributes": {
+          "name": "Weightlifting",
+          "events": [
+            "Weightlifting Women's Super-Heavyweight",
+            "Weightlifting Men's Heavyweight",
+            "Weightlifting Men's Middleweight",
+            "Weightlifting Men's Middle-Heavyweight",
+            "Weightlifting Men's Featherweight",
+            "Weightlifting Women's Flyweight",
+            "Weightlifting Women's Middleweight",
+            "Weightlifting Women's Lightweight",
+            "Weightlifting Men's Lightweight",
+            "Weightlifting Men's Super-Heavyweight",
+            "Weightlifting Men's Light-Heavyweight",
+            "Weightlifting Women's Heavyweight",
+            "Weightlifting Women's Light-Heavyweight",
+            "Weightlifting Men's Bantamweight",
+            "Weightlifting Women's Featherweight"
+        ]
+      }
+    }
+  ]
+}
+```
+
 ## Local Installation
 
 ### Requirements
