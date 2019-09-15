@@ -31,4 +31,22 @@ RSpec.describe Olympian, type: :model do
       expect(o4.total_medal_count).to eq(2)
     end
   end
+
+  describe 'class methods' do
+    it '.youngest_olympian' do
+      create_list(:olympian, 4)
+
+      youngest_olympian = create(:olympian, age: 14)
+
+      expect(Olympian.youngest_olympian).to eq(youngest_olympian)
+    end
+
+    it '.oldest_olympian' do
+      create_list(:olympian, 4)
+      
+      oldest_olympian = create(:olympian, age: 42)
+
+      expect(Olympian.oldest_olympian).to eq(oldest_olympian)
+    end
+  end
 end
