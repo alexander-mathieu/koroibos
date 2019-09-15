@@ -12,7 +12,7 @@ FactoryBot.define do
 
   factory :olympian_event_with_medal, parent: :olympian_event do
     medals = medals - ['NA']
-    
+
     medal { medals.sample }
   end
 

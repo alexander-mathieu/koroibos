@@ -10,7 +10,7 @@ FactoryBot.define do
     'Triathlon',     'Modern Pentathlon',
     'Sailing',       'Beach Volleyball',
     'Golf',          'Rhythmic Gymnastics',
-    'Hockey',        'Gymnastics',
+    'Hockey',        'Canoeing',
     'Archery',       'Tennis'
   ]
 
