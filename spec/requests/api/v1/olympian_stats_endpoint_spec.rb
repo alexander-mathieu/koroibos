@@ -17,36 +17,19 @@ RSpec.describe 'Olympian stats endpoint' do
 
     expect(response).to be_successful
 
-    olympian_stats = JSON.parse(response.body, symbolize_names: true)[:data]
+    olympian_stats = JSON.parse(response.body, symbolize_names: true)[:data][:attributes]
     olympian_average_height = olympian_stats[:average_height]
     olympian_average_weight = olympian_stats[:average_weight]
 
     expect(olympian_stats[:total_competing_olympians]).to eq(8)
-    expect(olympian_stats[:average_age]).to eq(26.25)
+    expect(olympian_stats[:average_age]).to eq('26.25')
 
     expect(olympian_average_height[:unit]).to eq('cm')
-    expect(olympian_average_height[:female_olympians]).to eq(167.5)
-    expect(olympian_average_height[:male_olympians]).to eq(187.5)
+    expect(olympian_average_height[:female_olympians]).to eq('167.5')
+    expect(olympian_average_height[:male_olympians]).to eq('187.5')
 
     expect(olympian_average_weight[:unit]).to eq('kg')
-    expect(olympian_average_weight[:female_olympians]).to eq(67.5)
-    expect(olympian_average_weight[:male_olympians]).to eq(85)
+    expect(olympian_average_weight[:female_olympians]).to eq('67.5')
+    expect(olympian_average_weight[:male_olympians]).to eq('85.0')
   end
 end
-
-
-
-
-
-
-# {
-#    "olympian_stats": {
-#      "total_competing_olympians": 3120
-#      "average_weight:" {
-#        "unit": "kg",
-#        "male_olympians": 75.4,
-#        "female_olympians": 70.2
-#      }
-#      "average_age:" 26.2
-#    }
-#  }
