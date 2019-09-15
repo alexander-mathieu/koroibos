@@ -8,4 +8,8 @@ class Olympian < ApplicationRecord
   has_many :sports, through: :olympian_sports
 
   enum sex: [ 'M', 'F' ]
+
+  def total_medal_count
+    olympian_events.where.not(medal: 0).count
+  end
 end
