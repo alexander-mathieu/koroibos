@@ -42,6 +42,66 @@ Example of expected response:
 }
 ```
 
+Also accepts the query param `age`. `?age=youngest` will return the youngest Olympian (example below), while `?age=oldest` will return the oldest Olympian.
+
+Example of expected response:
+```
+{
+  "data": {
+    "id": "2190",
+    "type": "olympian",
+    "attributes": {
+      "id": 2190,
+      "age": 13,
+      "name": "Ana Iulia Dascl",
+      "sports": [
+        {
+          "id": 18,
+          "name": "Swimming",
+          "created_at": "2019-09-14T23:51:15.082Z",
+          "updated_at": "2019-09-14T23:51:15.082Z"
+        }
+      ],
+      "team": {
+        "id": 1,
+        "name": "Romania",
+        "created_at": "2019-09-14T23:51:14.027Z",
+        "updated_at": "2019-09-14T23:51:14.027Z"
+      },
+      "total_medal_count": 0
+    }
+  }
+}
+```
+
+### `GET /api/v1/olympian_stats`
+
+Returns statistics for all Olympians, such as total Olympic competitors, average height, weight and age.
+
+Example of expected response:
+```
+{
+  "data": {
+    "id": null,
+    "type": "olympian_stats",
+    "attributes": {
+      "total_competing_olympians": 2850,
+      "average_age": "26.37",
+      "average_height": {
+        "unit": "cm",
+        "female_olympians": "179.52",
+        "male_olympians": "167.2"
+      },
+      "average_weight": {
+        "unit": "kg",
+        "female_olympians": "77.87",
+        "male_olympians": "61.41"
+      }
+    }
+  }
+}
+```
+
 ## Local Installation
 
 ### Requirements
