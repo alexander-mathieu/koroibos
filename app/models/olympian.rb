@@ -24,4 +24,13 @@ class Olympian < ApplicationRecord
   def self.oldest_olympian
     find_by(age: maximum(:age))
   end
+
+  def self.total_competing_olympians
+    Olympian.count
+  end
+
+  def self.olympian_average(attribute, gender)
+    where(sex: gender)
+    .average(attribute)
+  end
 end
