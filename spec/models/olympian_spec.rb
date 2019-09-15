@@ -2,9 +2,14 @@ require 'rails_helper'
 
 RSpec.describe Olympian, type: :model do
   before :each do
-    @o1, @o2, @o3, @o4 = create_list(:olympian, 4)
-    @o5 = create(:olympian, age: 14)
-    @o6 = create(:olympian, age: 42)
+    @o1 = create(:olympian, sex: 'F', age: 14, height: 160, weight: 60)
+    @o2 = create(:olympian, sex: 'F', age: 20, height: 165, weight: 65)
+    @o3 = create(:olympian, sex: 'F', age: 25, height: 170, weight: 70)
+    @o4 = create(:olympian, sex: 'F', age: 30, height: 175, weight: 75)
+    @o5 = create(:olympian, sex: 'M', age: 25, height: 160, weight: 75)
+    @o6 = create(:olympian, sex: 'M', age: 30, height: 185, weight: 80)
+    @o7 = create(:olympian, sex: 'M', age: 30, height: 200, weight: 85)
+    @o8 = create(:olympian, sex: 'M', age: 42, height: 205, weight: 100)
 
     create_list(:olympian_event_with_medal, 4, olympian: @o2)
     create_list(:olympian_event_with_medal, 2, olympian: @o4)
@@ -38,11 +43,25 @@ RSpec.describe Olympian, type: :model do
 
   describe 'class methods' do
     it '.youngest_olympian' do
-      expect(Olympian.youngest_olympian).to eq(@o5)
+      expect(Olympian.youngest_olympian).to eq(@o1)
     end
 
     it '.oldest_olympian' do
-      expect(Olympian.oldest_olympian).to eq(@o6)
+      expect(Olympian.oldest_olympian).to eq(@o8)
+    end
+
+    it '.total_competing_olympians' do
+      expect(Olympian.total_competing_olympians).to eq(8)
+    end
+
+    it '.olympian_average' do
+      expect(Olympian.olympian_average('height', 'F')).to eq(167.5)
+      expect(Olympian.olympian_average('height', 'M')).to eq(187.5)
+
+      expect(Olympian.olympian_average('weight', 'F')).to eq(67.5)
+      expect(Olympian.olympian_average('weight', 'M')).to eq(85)
+
+      expect(Olympian.olympian_average('age', [ 'F', 'M' ])).to eq(27)
     end
   end
 end
