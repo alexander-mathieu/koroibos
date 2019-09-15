@@ -6,6 +6,7 @@ FactoryBot.define do
     ]
 
     olympian
+    event
     medal { medals.sample }
   end
 end

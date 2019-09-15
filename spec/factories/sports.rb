@@ -4,9 +4,17 @@ FactoryBot.define do
       'Weightlifting', 'Gymnastics',
       'Athletics',     'Rowing',
       'Taekwondo',     'Boxing',
-      'Equestrianism', 'Cycling'
+      'Equestrianism', 'Cycling',
+      'Badminton',     'Rugby Sevens',
+      'Table Tennis',  'Water Polo',
+      'Trampolining',  'Basketball',
+      'Triathlon',     'Modern Pentathlon',
+      'Sailing',       'Beach Volleyball',
+      'Golf',          'Rhythmic Gymnastics',
+      'Hockey',        'Gymnastics',
+      'Archery',       'Tennis'
     ]
 
-    name { sports.sample }
+    name { sports.pop }
   end
 end
