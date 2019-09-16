@@ -1,8 +1,18 @@
+![Koroibos Screenshot](/public/images/koroibos_screenshot.png)
+
 # Koroibos
 
 ## About
 
-Welcome to _Koroibos_, an API designed to expose endpoints displaying data and statistics from the 2016 Summer Olympic Games. This is the final project for Module 4 at [Turing School of Software & Design](https://turing.io/), completed within a 48-hour timeframe.
+Welcome to _Koroibos_, a JSON:API designed to expose endpoints displaying data and statistics from the 2016 Summer Olympic Games. This is the final project for Module 4 at [Turing School of Software & Design](https://turing.io/), completed within a 48-hour timeframe.
+
+The deployed site's endpoints can be consumed at:
+
+https://koroibos-final.herokuapp.com/
+
+## Schema
+
+![Koroibos Schema](/public/images/schema.png)
 
 ## Endpoints
 
@@ -10,7 +20,7 @@ Welcome to _Koroibos_, an API designed to expose endpoints displaying data and s
 
 Returns a list of all Olympians in the database, with their name, team, age, sport(s) and total medals won.
 
-Example of expected response:
+**Example of expected response:**
 ```
 {
   "data": [
@@ -44,7 +54,7 @@ Example of expected response:
 
 Also accepts the query param `age`. `?age=youngest` will return the youngest Olympian (example below), while `?age=oldest` will return the oldest Olympian.
 
-Example of expected response:
+**Example of expected response:**
 ```
 {
   "data": {
@@ -78,7 +88,7 @@ Example of expected response:
 
 Returns statistics for all Olympians, such as total Olympic competitors, average height, weight and age.
 
-Example of expected response:
+**Example of expected response:**
 ```
 {
   "data": {
@@ -106,7 +116,7 @@ Example of expected response:
 
 Returns a list of all events, broken down by sport.
 
-Example of expected output:
+**Example of expected response:**
 ```
 {
   "data": [
@@ -142,7 +152,7 @@ Example of expected output:
 
 Returns a list of all medalists, broken down by event.
 
-Example of expected response:
+**Example of expected response:**
 ```
 {
   "data": {
@@ -183,7 +193,7 @@ Example of expected response:
 
 Returns a list of teams with their associated medal counts.
 
-Example of expected response:
+**Example of expected response:**
 ```
 {
   "data": {
@@ -219,7 +229,7 @@ Example of expected response:
 
 Returns a list of teams with their total event participation.
 
-Example of expected response:
+**Example of expected response:**
 ```
 {
   "data": {
