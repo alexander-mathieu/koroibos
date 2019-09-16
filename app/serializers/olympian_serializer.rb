@@ -5,9 +5,6 @@ class OlympianSerializer
              :age,
              :name,
              :sports,
-             :team
-
-  attribute :total_medal_count do |object|
-    object.total_medal_count
-  end
+             :team,
+             :total_medal_count
 end
