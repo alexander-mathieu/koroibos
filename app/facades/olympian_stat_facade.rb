@@ -11,19 +11,21 @@ class OlympianStatFacade
 
   def average_height
     {
-      female_olympians: Olympian.olympian_average('height', 'F'),
-      male_olympians: Olympian.olympian_average('height', 'M')
+      unit: 'cm',
+      female_olympians: Olympian.olympian_average('height', 'F').round(2),
+      male_olympians: Olympian.olympian_average('height', 'M').round(2)
     }
   end
 
   def average_weight
     {
-      female_olympians: Olympian.olympian_average('weight', 'F'),
-      male_olympians: Olympian.olympian_average('weight', 'M')
+      unit: 'kg',
+      female_olympians: Olympian.olympian_average('weight', 'F').round(2),
+      male_olympians: Olympian.olympian_average('weight', 'M').round(2)
     }
   end
 
   def average_age
-    Olympian.olympian_average('age', [ 'F', 'M' ])
+    Olympian.olympian_average('age', [ 'F', 'M' ]).round(2)
   end
 end
