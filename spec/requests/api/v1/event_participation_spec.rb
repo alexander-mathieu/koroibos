@@ -24,7 +24,7 @@ RSpec.describe 'event participation endpoint' do
 
     get '/api/v1/event_participation'
 
-    teams = JSON.parse(response.body, symbolize_names: true)[:data][:attributes][:team_participation]
+    teams = JSON.parse(response.body, symbolize_names: true)[:data][:attributes][:team_event_participation]
     team = teams[0]
     team_events = team[:events]
 
