@@ -1,5 +1,6 @@
 class Api::V1::EventsController < ApplicationController
   def index
-    render json: SportSerializer.new(Sport.includes(:events))
+    sports = Sport.includes(:events)
+    render json: SportEventSerializer.new(sports)
   end
 end
