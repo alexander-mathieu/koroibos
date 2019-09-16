@@ -1,4 +1,4 @@
-class MedalistSerializer
+class EventMedalistSerializer
   include FastJsonapi::ObjectSerializer
   set_type :events
   set_id :id

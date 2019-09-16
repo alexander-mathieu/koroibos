@@ -1,4 +1,4 @@
-class MedalCountSerializer
+class TeamMedalCountSerializer
   include FastJsonapi::ObjectSerializer
   set_type :teams
   set_id :id

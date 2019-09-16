@@ -1,4 +1,4 @@
-class SportSerializer
+class SportEventSerializer
   include FastJsonapi::ObjectSerializer
 
   attributes :name

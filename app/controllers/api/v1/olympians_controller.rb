@@ -1,11 +1,7 @@
 class Api::V1::OlympiansController < ApplicationController
   def index
-    if params[:age]
-      if params[:age] == 'youngest'
-        olympian_data = Olympian.youngest_olympian
-      else
-        olympian_data = Olympian.oldest_olympian
-      end
+    if params[:age] && (params[:age] == 'youngest' || params[:age] == 'oldest')
+      olympian_data = Olympian.youngest_or_oldest_olympian(params[:age])
     else
       olympian_data = Olympian.includes(
         :team,

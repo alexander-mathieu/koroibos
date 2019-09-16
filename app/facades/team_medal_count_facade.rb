@@ -1,4 +1,4 @@
-class MedalCountFacade
+class TeamMedalCountFacade
   attr_reader :id
 
   def initialize(teams)

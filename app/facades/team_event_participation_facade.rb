@@ -1,4 +1,4 @@
-class EventParticipationFacade
+class TeamEventParticipationFacade
   attr_reader :id
 
   def initialize(teams)
@@ -6,7 +6,7 @@ class EventParticipationFacade
     @teams = teams
   end
 
-  def team_participation
+  def team_event_participation
     @teams.map do |team|
       {
         team: team.name,
