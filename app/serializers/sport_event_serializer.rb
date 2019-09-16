@@ -1,6 +1,6 @@
 class SportEventSerializer
   include FastJsonapi::ObjectSerializer
-  set_type :sports
+  set_type :sport
 
   attributes :name
 
