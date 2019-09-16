@@ -1,4 +1,4 @@
-class MedalistFacade
+class EventMedalistFacade
   attr_reader :id
 
   def initialize(events)
