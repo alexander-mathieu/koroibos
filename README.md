@@ -215,6 +215,60 @@ Example of expected response:
 }
 ```
 
+### `GET /api/v1/event_participation`
+
+Returns a list of teams with their total event participation.
+
+Example of expected response:
+```
+{
+  "data": {
+    "id": null,
+    "type": "team",
+    "attributes": {
+      "team_participation": [
+        {
+          "team": "Romania",
+          "event_participation": "29 of 305 events",
+          "percentage": 0.1,
+          "events": [
+            "Weightlifting Women's Super-Heavyweight",
+            "Rowing Men's Coxless Fours",
+            "Wrestling Men's Heavyweight, Greco-Roman",
+            "Athletics Women's 20 kilometres Walk",
+            "Handball Women's Handball",
+            "Tennis Women's Singles",
+            "Tennis Mixed Doubles",
+            "Tennis Women's Doubles",
+            "Rowing Women's Lightweight Double Sculls",
+            "Rowing Women's Coxless Pairs",
+            "Rowing Women's Coxed Eights",
+            "Athletics Women's 800 metres",
+            "Athletics Women's 3,000 metres Steeplechase",
+            "Fencing Women's epee, Individual",
+            "Fencing Women's epee, Team",
+            "Athletics Women's Triple Jump",
+            "Fencing Women's Foil, Individual",
+            "Judo Women's Lightweight",
+            "Weightlifting Men's Middleweight",
+            "Judo Women's Half-Lightweight",
+            "Athletics Women's Marathon",
+            "Athletics Men's 50 kilometres Walk",
+            "Swimming Men's 4 x 100 metres Freestyle Relay",
+            "Table Tennis Men's Singles",
+            "Swimming Women's 100 metres Freestyle",
+            "Fencing Men's Sabre, Individual",
+            "Gymnastics Men's Floor Exercise",
+            "Gymnastics Men's Horse Vault",
+            "Gymnastics Men's Horizontal Bar"
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
 ## Local Installation
 
 ### Requirements
