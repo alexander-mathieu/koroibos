@@ -17,12 +17,12 @@ class Olympian < ApplicationRecord
     .count
   end
 
-  def self.youngest_olympian
-    find_by(age: minimum(:age))
-  end
-
-  def self.oldest_olympian
-    find_by(age: maximum(:age))
+  def self.youngest_or_oldest_olympian(age_param)
+    if age_param == 'youngest'
+      find_by(age: minimum(:age))
+    else
+      find_by(age: maximum(:age))
+    end
   end
 
   def self.total_competing_olympians
