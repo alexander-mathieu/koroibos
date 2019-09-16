@@ -6,7 +6,7 @@ class Event < ApplicationRecord
   has_many :olympians, through: :olympian_events
 
   def self.team_participation_percentage(team_id)
-    (team_events(team_id).count).fdiv(self.count)
+    (team_events(team_id).count).fdiv(self.count).round(2)
   end
 
   def self.team_events(team_id)
