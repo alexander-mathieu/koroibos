@@ -13,7 +13,7 @@ class Olympian < ApplicationRecord
 
   def total_medal_count
     olympian_events
-    .where.not(medal: 0)
+    .merge(OlympianEvent.medalled_events)
     .count
   end
 
@@ -37,7 +37,7 @@ class Olympian < ApplicationRecord
   def self.event_medalists(event_id)
     select('olympians.*, olympian_events.medal AS medal')
     .joins(:events)
+    .merge(OlympianEvent.medalled_events)
     .where('events.id = ?', event_id)
-    .where.not('olympian_events.medal = ?', 0)
   end
 end

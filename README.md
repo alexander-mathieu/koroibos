@@ -179,6 +179,42 @@ Example of expected response:
 }
 ```
 
+### `GET /api/v1/medal_count`
+
+Returns a list of teams with their associated medal counts.
+
+Example of expected response:
+```
+{
+  "data": {
+    "id": null,
+    "type": "teams",
+    "attributes": {
+      "team_medalists": [
+        {
+          "team": "Romania",
+          "total_medal_count": 7,
+          "medals": {
+              "bronze": 5,
+              "silver": 0,
+              "gold": 2
+          }
+        },
+        {
+          "team": "Spain",
+          "total_medal_count": 14,
+          "medals": {
+              "bronze": 6,
+              "silver": 4,
+              "gold": 4
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
 ## Local Installation
 
 ### Requirements
