@@ -308,6 +308,14 @@ Once initial setup is complete, run the following command to populate the databa
 $ bundle exec rake import_olympic_data
 ```
 
+### API Exploration
+
+Once installation and database setup are complete, explore the various API endpoints with the following steps:
+* From the `koroibos` project directory, boot up a server with `$ rails s`
+* Open your browser, and visit `http://localhost:3000/`
+* In a separate terminal window, query the available endpoints by running `rails routes`
+* Copy any of the URIs displayed and append to `http://localhost:3000/` in your browser
+
 ### Testing
 
 The full test suite can be run with `$ bundle exec rspec`.
