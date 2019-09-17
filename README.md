@@ -10,6 +10,8 @@ The deployed site's endpoints can be consumed at:
 
 https://koroibos-final.herokuapp.com/
 
+The project board can be viewed [here](https://github.com/alexander-mathieu/koroibos/projects/1/).
+
 ## Schema
 
 ![Koroibos Schema](/public/images/schema.png)
